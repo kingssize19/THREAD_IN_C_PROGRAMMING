@@ -69,8 +69,32 @@ int main() {
 * İkinci pthread_create çağrısı func2 fonksiyonu için yapılır, aynı şekilde çalışır.
 
 
+```c
+uint8_t input;
+    while(1) {
+        printf("Devam etmek için 1, durdurmak için 0 girin: ");
+        scanf("%zu", &input);
+
+        if (input == 0) {
+            stop = 1;  // stop bayrağını 1 yaparak thread'lerin durmasını sağlıyoruz
+            break;     // Girdiyi aldıktan sonra ana döngüden çıkıyoruz
+        }
+    }
+```
+* uint8_t input;    : Kullanıcıdan alınacak girdi için 8 bitlik değişken tanımlanır.
+* while (1)         : Sonsuz döngü, kullanıcıdan sürekli girdi bekler.
+* Kullanıcının girdiği değer 0 olur ise stop değişkeninin değerini 1 yapar.
+
+```c
+    pthread_join(t1, NULL);
+    pthread_join(t2, NULL);
+```
+* phtread_join  : İş parçacıklarının tamamlanmasını bekler.
+* t1 ve t2 için iş parçacıkları tamamlanana kadar ana programın beklemesini sağlar. Bu, ana programın, iş parçacıklarının işlerini bitirmeden sonlanmamasını sağlar.
 
 
+### ÖZET
+Bu program, iki iş parçacığını (func1 ve func2) paralel olarak çalıştırır ve kullanıcıdan 0 veya 1 girişi alır. Kullanıcı 0 girdiğinde iş parçacıkları durdurulur ve program sonlanır. Program, iş parçacıkları arasında veri paylaşımı için bir global bayrak (stop) kullanır ve volatile anahtar kelimesi ile iş parçacıkları tarafından değiştirilebileceği belirtilir.
 
 
 
