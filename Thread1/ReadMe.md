@@ -45,7 +45,7 @@ int main() {
 * İki fonksiyonun da aynı anda (paralel) çalışmasını istiyorsak, pthread (iş parçacıkları) kütüphanesini kullanarak her iki fonksiyonu ayrı thread'ler olarak çalıştırabilir. Ya da aşağıdaki uygulandığı şekilde bu işlemi thread_main1.c programındaki gibi gerçekleştirebiliriz. Aşağıda ayrıntılı bir şekilde thread_main1.c programı analiz edilmektedir.
 
 
-# -------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # thread_main1.c
 **Bu programda, iki fonksiyon (func1 ve func2) paralel olarak çalıştırılmaya çalışılıyor. Programda iş parçacıkları (threads) kullanılarak aynı anda hem func1 hem de func2 fonksiyonlarının çıktıları ekranda gösterilmek isteniyor.**
