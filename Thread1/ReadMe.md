@@ -6,5 +6,5 @@ func1() fonksiyonu :
         printf("func1 \n");
         sleep(1);
     }
-} '''
+} ''' **
      
