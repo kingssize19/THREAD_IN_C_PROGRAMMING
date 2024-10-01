@@ -7,5 +7,5 @@ void func1() {
         printf("func1 \n");
         sleep(1);
     }
-} '''**
+}**
      
