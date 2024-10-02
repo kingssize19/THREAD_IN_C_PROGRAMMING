@@ -25,4 +25,4 @@
 4) Çalışma Mantığı :
    * Her iki thread aynı anda çalıştırılır ve bu sayede LED1 her snaiye yanıp sönerken, LED2 her iki saniyede bir yanıp söner.
    * Ana fonksiyonun pthread_join fonksiyonlarıyla iş parçacıklarının tamamlanmasını beklemesi nedeniyle program iş parçacıkları bitene kadar çalışmaya devam eder. Ancak iş parçacıkları sonsuz döngüde olduğu için program hiçbir zaman sonlanmaz.
-   * 
+   
