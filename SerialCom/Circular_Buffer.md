@@ -17,7 +17,7 @@
 
 ## Örnek Uygulama: Büyük Buffer ile Veri Depolama
 
-**Aşağıda, verilerin buffer'a alınması ve ekrana yazdırılması sıklığını azaltan, ancak buffer sayesinde verilerin birikmesini sağlayan bir program örneği: 
+**Aşağıda, verilerin buffer'a alınması ve ekrana yazdırılması sıklığını azaltan, ancak buffer sayesinde verilerin birikmesini sağlayan bir program örneği :** 
 
 ```c
 #include <stdio.h>
