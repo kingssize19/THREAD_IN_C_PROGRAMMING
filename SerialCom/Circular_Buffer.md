@@ -220,8 +220,11 @@ int main() {
 
 ### Programın Özellikleri : 
 **1. circularBuffer :** 1024 byte'lık bir tamponda gelen verileri saklar.
+
 **2. writePos ve readPos :** Tampondaki yazma ve okuma pozisyonlarını kontrol eder.
+
 **3. Ring Buffer Yapısı :** Tampon dolduğunda en eski veri üzerine yazılarak tampon taşması engellenir.
+
 **4. Veri Gönderme ve Alma :** İki ayrı iş parçacığı (thread) veri gönderip alır. Bir iş parçacığı sürekli veri alırken, diğeri tampondaki veriyi ekrana yazdırır.
 
 **Bu yapı, veri okuma ve ekrana yazma işlemlerini ayrı tutarak tamponun taşmasını önler ve veri kaybını minimize eder.**
