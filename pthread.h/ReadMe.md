@@ -1,0 +1,1 @@
+**POSIX (Portable Operating System Interface) standardına uygun pthread kütüphanesi, çok çekirdekli işlemcilerde çoklu iş parçacıklarını (threads) kullanarak paralel programlama yapmayı sağlayan bir kütüphanedir. pthread kütüphanesinin sağladığı fonksiyonlar sayesinde, programcılar birden fazla işlemi aynı anda yürütebilirler.**
