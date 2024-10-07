@@ -1,6 +1,7 @@
 **POSIX (Portable Operating System Interface) standardına uygun pthread kütüphanesi, çok çekirdekli işlemcilerde çoklu iş parçacıklarını (threads) kullanarak paralel programlama yapmayı sağlayan bir kütüphanedir. pthread kütüphanesinin sağladığı fonksiyonlar sayesinde, programcılar birden fazla işlemi aynı anda yürütebilirler.**
 
 ### 1. pthread_create
+
 **Bu fonksiyon, yeni thread oluşturmak için kullanılır.**
 ```c
 int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg);
@@ -13,6 +14,7 @@ int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_
 Başarı durumunda 0, hata durumunda pozitif bir hata kodu döner.
 
 ### 2. pthread_join
+
 **Bir iş parçacığının sonlanmasını bekler. İş parçacığının tamamlandığında döndüreceği değeri alabilir.**
 ```c
 int pthread_join(pthread_t thread, void **retval);
@@ -22,6 +24,7 @@ int pthread_join(pthread_t thread, void **retval);
 Bir iş parçacığına **pthread_join** ile bağlanılmazsa, onun sonlanmasıyla ilgili kaynaklar temizlenmez ve **"zombie"** durumu oluşur.
 
 ### 3. pthread_exit
+
 **Bir iş parçacığının çalışmasını sonlandırır.**
 ```c
 void pthread_exit(void *retval);
@@ -30,6 +33,7 @@ void pthread_exit(void *retval);
 **pthread_exit**, iş parçacığını sonlandırırken kaynakları temizler ve **pthread_join** fonksiyonuyla başka iş parçacıklarına sonuç döndürebilir.
 
 ### 4. pthread_self
+
 **Mevcut iş parçacığının kimliğini döndürür.**
 ```c
 pthread_t pthread_self(void);
@@ -37,12 +41,42 @@ pthread_t pthread_self(void);
 * **Dönüş Değeri :** Bu fonksiyon çağrıldığında çalışmakta olan iş parçacığının kimliği (pthread_t tipi).
 
 ### 5. pthread_detach
+
 **Bir iş parçacığını ayrık hale getirir. Bu iş parçacığı kendi kendine tamamlanır ve sonlandığında kaynaklar otomatik olarak serbest bırakılır.**
 ```c
 int pthread_detach(pthread_t thread);
 ```
 * **thread :** Ayrık hale getirilecek iş parçacığının kimliği.
 Ayrık iş parçacıklarında **pthread_join** kullanılamaz.
+
+### 6. pthread_equal
+
+**İki iş parçacığının kimliklerini karşılaştırır.**
+```c
+int pthread_equal(pthread_t t1, pthread_t t2);
+```
+* **t1, t2 :** Karşılaştırılacak iş parçacığı kimlikleridir.
+* **Dönüş Değeri :** Eğer iki iş parçacığı aynı ise 0 dışında bir değer, değilse 0 döner.
+
+### 7. pthread_mutex_init
+
+**Bir mutex'i başlatır.**
+```c
+int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *attr);
+```
+* **mutex :** Başlatılacak mutex değişkeni.
+* **attr :** Mutexin öznitelikleri. NULL verilirse varsayılan olarak kullanılır.
+Bu fonksiyon ile oluşturulan mutex'ler **pthread_mutex_lock** veya **pthread_mutex_trylock** ile kilitlenebilir.
+
+### 8. pthread_mutex_destroy
+
+**Bir mutex'i yok eder.**
+```c
+int pthread_mutex_destroy(pthread_mutex_t *mutex);
+```
+* **mutex :** Yok edilecek mutex değişkeni.
+
+### 9. pthread_mutex_lock
 
 
 
